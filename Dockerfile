@@ -23,7 +23,6 @@ RUN composer install \
 FROM php:7.3
 
 RUN apt-get update && apt-get upgrade -y && apt-get install docker.io -y && apt-get clean
-RUN docker-php-ext-install pcntl
 COPY --from=vendor /app /app
 WORKDIR /app
 
