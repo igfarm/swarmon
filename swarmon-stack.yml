@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  monitor:
+    image: igfarm/swarmon:latest
+    environment:
+      - SLACK_WEBHOOK=https://hooks.slack.com/services/xxxxxxxxx/yyyyyyyyy
+      - NODE_COUNT=3
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+      restart_policy:
+        condition: any
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

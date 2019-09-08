@@ -1,0 +1,13 @@
+{
+    "require": {
+        "vlucas/phpdotenv": "^3.5",
+        "symfony/console": "^3.4",
+        "maknz/slack": "^1.7"
+    },
+	"autoload": {
+	 "psr-4": {
+	  "Console\\": "src"
+	 },
+	 "classmap": ["src"]
+	 }
+}
