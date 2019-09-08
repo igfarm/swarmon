@@ -58,7 +58,13 @@ class RunCommand extends SymfonyCommand
 		{
 			throw new \Exception("Docker is not running or not connected to a swarm.");
 		}
-	
+
+		// sent an initial slack to confirm all is working on startup if requested	
+		if (getenv('SLACK_ON_START') == "yes")
+		{
+			$slack->send("swarmon is starting.");
+		}
+		
         //	Loop forverver and ever
 	    $this->logger->notice("Will check every $check_inverval_min minutes.");
         while (true) 

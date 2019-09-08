@@ -7,3 +7,4 @@ It is configured via environment variables:
  - SLACK_WEBHOOK: contains the webhook link to the slack channel where problems will be posted
  - NODE_COUNT: the expected number of healthy available nodes
  - CHECK_INTEVAL_MIN: (optional) the number of minutes between checks. Defaults to 5 if not provided. 
+ - SLACK_ON_START: (optional) set this variable to 'yes' if you want to send slack message when the app starts.
